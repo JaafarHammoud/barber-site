@@ -9,6 +9,15 @@
   var pad = function (n) { return (n < 10 ? '0' : '') + n; };
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function shuffle(list) {
+    var a = list.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
   function el(tag, cls, text) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -80,7 +89,9 @@
   function money(n) { return String(n).replace(/\B(?=(\d{3})+$)/g, ' ') + ' ₽'; }
 
   function renderPrices() {
-    var rows = window.LORD_SERVICES[state.branch][state.tier];
+    var tiers = window.LORD_SERVICES[state.branch];
+    var rows = tiers[state.tier] || tiers.barber;
+    $('seg-tier').hidden = !tiers.topBarber;
     var frag = document.createDocumentFragment();
     rows.forEach(function (s, i) {
       var li = el('li');
@@ -117,9 +128,9 @@
     ['crew-1', 'Александр', 'Барбер', 'aleksandr', 1691274, 4159747],
     ['crew-1', 'Само', 'Барбер', 'samo', 1691274, 4445139],
     ['crew-1', 'Полина', 'Барбер', 'polina', 1691274, null],
-    ['crew-2', 'Виктория', 'Топ-барбер', 'viktoriya', 1890370, 4105633],
-    ['crew-2', 'Мидо', 'Топ-барбер', 'mido', 1890370, 4643271],
-    ['crew-2', 'Алексей', 'Топ-барбер', null, 1890370, 4502496]
+    ['crew-2', 'Виктория', 'Барбер', 'viktoriya', 1890370, 4105633],
+    ['crew-2', 'Мидо', 'Барбер', 'mido', 1890370, 4643271],
+    ['crew-2', 'Алексей', 'Барбер', null, 1890370, 4502496]
   ];
   MASTERS.forEach(function (m) {
     var li = el('li', 'rv');
@@ -159,10 +170,9 @@
 
   // I. Срез: следующая работа входит зубцами расчёски, а край идёт за пальцем
   (function () {
-    var WORKS = [];
-    for (var w = 1; w <= 42; w++) if (w !== 26 && w !== 34) WORKS.push(w);
+    var WORKS = shuffle(window.LORD_GALLERY.works);
     var N = WORKS.length;
-    var src = function (i) { return 'assets/img/works/' + WORKS[wrap(i, N)] + '.webp'; };
+    var src = function (i) { return 'assets/img/works/' + encodeURIComponent(WORKS[wrap(i, N)]); };
 
     var stage = $('cut'), base = $('cut-base'), next = $('cut-next'), edge = $('cut-edge');
     var numEl = $('cut-n'), comb = $('comb');
@@ -340,12 +350,7 @@
 
   // IV. Ротонда: зритель сидит в кресле в центре круга
   (function () {
-    var PHOTOS = [
-      [2, 'Вывеска из мха'], [5, 'Рабочие места'], [4, 'Натюрморт с бритвой'], [17, 'Кресло у окна'],
-      [9, 'Вечерний свет'], [12, 'Диван и графика на колонне'], [7, 'Стол мастера'], [1, 'Фасад вечером'],
-      [11, 'Солнце на полу'], [15, 'Зеркало и полки'], [3, 'Щётки'], [14, 'Изумрудный зал'],
-      [8, 'Вход с улицы'], [18, 'Фасад днём']
-    ];
+    var PHOTOS = window.LORD_GALLERY.salon;
     var N = PHOTOS.length, STEP = 360 / N;
     var stage = $('rotunda'), ring = $('ring'), deg = $('dial-deg'), cap = $('ring-cap'), ticks = $('dial-ticks');
     var panes = [], R = 0, angle = 0, target = 0, vel = 0, drag = null;
@@ -355,7 +360,7 @@
       var pane = el('div', 'pane');
       var img = el('img');
       img.alt = ph[1];
-      img.dataset.src = 'assets/img/salon/' + ph[0] + '.webp';
+      img.dataset.src = 'assets/img/salon/' + encodeURIComponent(ph[0]);
       pane.append(img);
       ring.append(pane);
       panes.push(pane);

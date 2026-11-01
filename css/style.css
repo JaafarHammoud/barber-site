@@ -217,6 +217,7 @@ h2 { font: 400 clamp(3rem, 15vw, 7.5rem)/.98 var(--display); letter-spacing: -.0
 .sheet__head > p:last-child { margin-top: 12px; max-width: 34ch; }
 .sheet__ctrl { position: relative; display: grid; gap: 8px; margin-bottom: 14px; }
 .seg { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #26291f; }
+.seg[hidden] { display: none; }
 .seg button {
   min-height: 48px; padding: 4px 8px;
   font: 700 1.2rem/1.05 var(--label); letter-spacing: .07em; text-transform: uppercase;

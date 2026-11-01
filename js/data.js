@@ -177,68 +177,6 @@ window.LORD_SERVICES = {
  "branch2": {
   "barber": [
    {
-    "name": "Воск",
-    "min": 15,
-    "price": 300,
-    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/22583564"
-   },
-   {
-    "name": "Детская стрижка",
-    "min": 80,
-    "price": 900,
-    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/21551738"
-   },
-   {
-    "name": "Камуфляж седины",
-    "min": 60,
-    "price": 800,
-    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/22583590"
-   },
-   {
-    "name": "Моделирование бороды",
-    "min": 45,
-    "price": 700,
-    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/21551713"
-   },
-   {
-    "name": "Мужская стрижка",
-    "min": 75,
-    "price": 1200,
-    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/21551706"
-   },
-   {
-    "name": "Окантовка",
-    "min": 60,
-    "price": 250,
-    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/22583617"
-   },
-   {
-    "name": "Стрижка машинкой (1-2 насадки)",
-    "min": 40,
-    "price": 600,
-    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/21551727"
-   },
-   {
-    "name": "Стрижка ножницами",
-    "min": 115,
-    "price": 1400,
-    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/22583640"
-   },
-   {
-    "name": "Укладка волос",
-    "min": 20,
-    "price": 500,
-    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/20225932"
-   },
-   {
-    "name": "Уход за лицом Volcano",
-    "min": 30,
-    "price": 1000,
-    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/20225946"
-   }
-  ],
-  "topBarber": [
-   {
     "name": "Бритье опасной бритвой лицо или голова",
     "min": 60,
     "price": 1500,
@@ -252,7 +190,7 @@ window.LORD_SERVICES = {
    },
    {
     "name": "Детская стрижка",
-    "min": 60,
+    "min": 45,
     "price": 1300,
     "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/20225898"
    },
@@ -309,6 +247,18 @@ window.LORD_SERVICES = {
     "min": 30,
     "price": 1000,
     "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/20225946"
+   },
+   {
+    "name": "Мужская стрижка + борода + уход за лицом",
+    "min": 150,
+    "price": 3200,
+    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/23098229"
+   },
+   {
+    "name": "Папа + сын",
+    "min": 105,
+    "price": 2500,
+    "link": "https://dikidi.net/ru/profile/barbershop_lord_1890370/service/23098224"
    }
   ]
  }
