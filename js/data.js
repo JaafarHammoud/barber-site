@@ -103,7 +103,7 @@ window.LORD_SERVICES = {
    {
     "name": "Стрижка ножницами",
     "min": 90,
-    "price": 1700,
+    "price": 1900,
     "link": "https://dikidi.net/ru/record/1691274?p=3.pi-po-ssm-si&o=7&s=19874081"
    },
    {
@@ -163,13 +163,13 @@ window.LORD_SERVICES = {
    {
     "name": "Мелирование",
     "min": 120,
-    "price": 4000,
+    "price": "от 4000",
     "link": "https://dikidi.net/ru/record/1691274?p=3.pi-po-ssm-si&o=7&s=20741165"
    },
    {
     "name": "Хим. завивка",
     "min": 60,
-    "price": 4000,
+    "price": "от 4000",
     "link": "https://dikidi.net/ru/record/1691274?p=3.pi-po-ssm-si&o=7&s=20741305"
    }
   ]
