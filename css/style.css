@@ -248,10 +248,10 @@ h2 { font: 400 clamp(3rem, 15vw, 7.5rem)/.98 var(--display); letter-spacing: -.0
 .masters h3 { display: flex; align-items: center; gap: 12px; margin: 0 0 16px; font: 600 1.15rem/1.1 var(--label); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .masters h3::after { content: ''; flex: 1; height: 1px; background: rgba(233, 227, 213, .2); }
 .crew { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 12px; }
-.crew li:first-child { grid-column: 1 / -1; }
+.crew li:first-child:nth-last-child(odd) { grid-column: 1 / -1; }
 .crew a { display: block; }
 .crew__frame { position: relative; display: block; aspect-ratio: 1; background: var(--wall); overflow: hidden; }
-.crew li:first-child .crew__frame { aspect-ratio: 5 / 4; }
+.crew li:first-child:nth-last-child(odd) .crew__frame { aspect-ratio: 5 / 4; }
 .crew img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; filter: saturate(.82) contrast(1.03); transition: transform .8s var(--ease), filter .4s; }
 .crew__frame::before, .crew__frame::after { content: ''; position: absolute; z-index: 1; top: 0; bottom: 0; width: 3px; background: #ffd894; box-shadow: var(--glow); transform: scaleY(0); transition: transform .6s var(--ease); }
 .crew__frame::before { left: 0; } .crew__frame::after { right: 0; }
@@ -361,12 +361,14 @@ h2 { font: 400 clamp(3rem, 15vw, 7.5rem)/.98 var(--display); letter-spacing: -.0
 @media (min-width: 560px) {
   :root { --gutter: 28px; }
   .crew { grid-template-columns: repeat(3, 1fr); }
-  .crew li:first-child { grid-column: auto; }
-  .crew li:first-child .crew__frame { aspect-ratio: 1; }
+  .crew--4 { grid-template-columns: repeat(2, 1fr); }
+  .crew li:first-child:nth-last-child(odd) { grid-column: auto; }
+  .crew li:first-child:nth-last-child(odd) .crew__frame { aspect-ratio: 1; }
   .cut { margin: 0; }
 }
 
 @media (min-width: 768px) {
+  .crew--4 { grid-template-columns: repeat(4, 1fr); }
   .places { grid-template-columns: 1fr 1fr; gap: 28px; }
   .voices__list { grid-template-columns: repeat(3, 1fr); }
   .sheet__ctrl { grid-template-columns: 1.300fr 1fr; }

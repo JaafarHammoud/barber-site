@@ -116,6 +116,7 @@
     ['crew-1', 'Кусаи', 'Топ-барбер', 'kusai', 1691274, 3642650],
     ['crew-1', 'Александр', 'Барбер', 'aleksandr', 1691274, 4159747],
     ['crew-1', 'Само', 'Барбер', 'samo', 1691274, 4445139],
+    ['crew-1', 'Полина', 'Барбер', 'polina', 1691274, null],
     ['crew-2', 'Виктория', 'Топ-барбер', 'viktoriya', 1890370, 4105633],
     ['crew-2', 'Мидо', 'Топ-барбер', 'mido', 1890370, 4643271],
     ['crew-2', 'Алексей', 'Топ-барбер', null, 1890370, 4502496]
@@ -123,7 +124,7 @@
   MASTERS.forEach(function (m) {
     var li = el('li', 'rv');
     var a = el('a');
-    a.href = 'https://dikidi.net/ru/profile/' + m[4] + '/master/' + m[5];
+    a.href = m[5] ? 'https://dikidi.net/ru/profile/' + m[4] + '/master/' + m[5] : 'https://dikidi.net/ru/profile/barbershop_lord_' + m[4];
     a.target = '_blank';
     a.rel = 'noopener';
     var frame = el('span', 'crew__frame');
